@@ -18,13 +18,13 @@ VAR time = -1 //  0 morning, 1 noon, 2 night
 
 == waking_up ==
 You open your eyes and find yourself laying down in the middle of an empty town.
-* [Get up] -> center
++ [Get up] -> center
 
 == center ==
 Looking upwards shows a dark expanse, but not of the sky. You can make out the structural supports of a roof through the help of small lights disguised as stars.
 A nearby clocktower chimes, and as you look at it's face you can tell that it is { advance_time() }.
 Surrounding you are several shops. Each has its own neon sign above the door showing the name of the shop.
-{|You see a handful of {not conversation:people|robots} walking around, oblivious to your confusion.|Several {not conversation:people|robots} are streaming throughout all the shops, whose neon signs are now brightly lit.}
+{&|You see a handful of {not conversation:people|robots} walking around, oblivious to your confusion.|Several {not conversation:people|robots} are streaming throughout all the shops, whose neon signs are now brightly lit.}
 + [Approach the nearest shop] -> tinkers
 + {time > 0} [Talk to the {not conversation:people|robots}] -> conversation
 * [Go back to sleep] -> sleep
@@ -32,7 +32,7 @@ Surrounding you are several shops. Each has its own neon sign above the door sho
 == tinkers ==
 As you get closer to the shop, you see the name of the shop is Tinkers.
 {time == 0: It's empty inside, but you can vaguely make out some shapes of shelves. It's too dark to see what's on the shelves.}
-{time != 0: With the help of the street lights, you can see inside. {time == 1: Nobody is inside|People are moving in and out of the shop} and you can make out the shapes of screws, bolts, and mechanical tools on the shelves.}
+{time != 0: With the help of the street lights, you can see inside. {time == 1: Nobody is there, but|People are moving in and out of the shop and} you can make out the shapes of screws, bolts, and mechanical tools on the shelves.}
 + [Go back to the center of town] -> center
 + {time != 0} [Enter Tinkers] -> in_tinkers
 
